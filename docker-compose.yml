@@ -1,0 +1,16 @@
+services:
+    node:
+        build:
+            args:
+                DIRECTORY: /usr/src/app
+                PRODUCTION: 'false'
+            context: .
+        ports:
+            - 80:8080
+        volumes:
+            - ./public:/usr/src/app/public
+            - ./resources:/usr/src/app/resources
+            - ./routes:/usr/src/app/routes
+            - ./server.js:/usr/src/app/server.js
+
+version: '3.8'
